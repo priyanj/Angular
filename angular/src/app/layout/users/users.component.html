@@ -1,0 +1,120 @@
+<!-- <div class="bg-info">
+  <div>
+<header id="main-header">Users</header>
+<p>hello every one</p>
+</div>
+</div> -->
+
+<!-- <div class="container" class="bg-info">
+  <p>hi</p>
+
+  </div> -->
+  <!doctype html>
+  <!-- <html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
+     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+     <script>
+     $(document).ready(function() {
+    $('#user-list').DataTable();
+} );
+     </script>
+  </head>
+  <body> -->
+
+    
+  <div>
+    <div>
+      <header id="main-header"><strong><h3>Users</h3></strong></header>
+    </div>
+      <div>
+      <form class="form-group">
+          
+          <!-- <span class="border border-right-0 border-dark"> -->
+        <div class="form-group" style=" padding:15px; box-shadow:1px 3px .5px inset #D3D3D3; border-bottom: 5px">
+          <div>
+            <button type="button" class="btn btn-info btn-sm" style="margin-right: 5px">Add User</button>
+            <button type="button" class="btn btn-info btn-sm">Upload user Info</button>
+            <br>
+            <br>
+            <br>
+            <!-- <button type="button" class="btn btn-primary btn-sm" > Add User </button>
+            <button type="button" class="btn btn-primary btn-sm" style="padding-left: 20px;position: relative;"> Upload user Info </button> -->
+          </div>
+          <div class="container">
+            <table datatable="bootstrap" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped " res>
+                  <thead>
+                    <tr>
+                      <th data-priority="1">Username</th>
+                      <th data-priority="3">Ip Address(s)</th>
+                      <th data-priority="2">Company</th>
+                      <th data-priority="4">LastLogin</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- <tr>
+                      <td>John</td>
+                      <td>Doe</td>
+                      <td>john@example.com</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>Mary</td>
+                      <td>Moe</td>
+                      <td>mary@example.com</td>
+                      <td></td>
+                      <td></td>
+                    </tr> -->
+                    <tr *ngFor = "let size of AllData">
+                      <td>{{size.username}}</td>
+                      <td>{{size.ip_address}}</td>
+                      <td>{{size.company}}</td>
+                      <td>{{size.last_login}}</td>
+                      <td>
+                            
+                          <!-- <div class="btn-group"> -->
+                              <a routerLink="/users" [routerLinkActive]="['router-link-active']" class="btn btn-info" style="margin-right: 2px">
+                                <i class="fa fa-key"></i>&nbsp;
+                                <span></span>
+                            </a>
+                                  <a routerLink="/editusers" [routerLinkActive]="['router-link-active']" class="btn btn-success" style="margin-right: 2px">
+                                    <i class="fa fa-edit"></i>&nbsp;
+                              <span></span>
+                          </a>
+                              <a routerLink="/deleteusers" [routerLinkActive]="['router-link-active']" class="btn btn-danger" style="margin-right: 2px">
+                                <i class="fa fa-trash-o"></i>&nbsp;
+                                  <span></span>
+                              </a>
+                          <!-- </div> -->
+                          <!-- <div class="btn-group" role="group" aria-label="..."> -->
+                            <!-- <button type="button" class="btn btn-info" style="margin-right: 5px">q<i class="glyphicon glyphicon-search">
+                              </i></button>
+                            <button type="button" class="btn btn-success" style="margin-right: 5px">q<i class="glyphicon glyphicon-pencil">
+                              </i></button>
+                            <button type="button" class="btn btn-danger" style="margin-right: 5px" >q<i class="glyphicon glyphicon-trash">
+                              </i></button> -->
+                          <!-- </div> -->
+                         
+                          </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped "></table> -->
+          </div>
+         
+          </div>
+        <!-- </span> -->
+      
+      </form>
+    </div>
+    <div>
+    <footer class="page-footer font-small fixed-bottom text-center" >Copyright © 2017-2018 . All rights reserved.</footer>
+  </div>
+  </div>
+<!-- </body>
+</html> -->

@@ -1,0 +1,35 @@
+<div class="login-page" [@routerTransition]>
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <img src="assets/images/logo.png" width="150px" class="user-avatar" />
+            <h1>Cloudable Test Application</h1>
+                <!-- <a class="btn rounded-btn" [routerLink]="['/dashboard']" (click)="onLoggedin($event)" type="submit"> Log in </a> -->
+            <form #userForm="ngForm" role="form">
+                <div class="form-content">
+                    <div class="form-group">
+                        <!-- <em *ngIf="ngForm.controls.username?.invalid && ngForm.controls.username?.touched">Required</em> -->
+                        <input class="form-control input-underline input-lg" type="text" ngModel #formName="ngModel" name="username" placeholder="Name" required pattern="[a-zA-z][a-zA-z]+" minlength="8">
+                    </div>
+                    <div *ngIf="formName?.touched" class="alert alert-danger">
+                         <div *ngIf="formName.errors?.required">Name can't be empty</div>
+                         <div *ngIf="formName.errors?.pattern || formName.errors?.minlength">Invalid Name</div>
+                      </div>
+
+                    <div class="form-group">
+                            <!-- <em *ngIf="ngForm.controls.password?.invalid && ngForm.controls.password?.touched">Required</em> -->
+                        <input class="form-control input-underline input-lg" type="password" #formPassword="ngModel" ngModel  name="password" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" minlength="8">
+                    </div>
+                        <div *ngIf="formPassword?.touched" class="alert alert-danger">
+                            <div *ngIf="formPassword.errors?.required">Password can't be empty</div>
+                            <div *ngIf="formPassword.errors?.pattern || formPassword.errors?.minlength">Invalid Password</div>
+                         </div>
+                        
+                </div>
+                <button class="btn rounded-btn" (click)="onLoggedin(userForm.value)" [disabled]="userForm.invalid" > Log in </button>
+                <!-- <a class="btn rounded-btn" [routerLink]="['/dashboard']" (click)="onLoggedin(userForm.value)"> Log in </a> -->
+                &nbsp;
+                <a class="btn rounded-btn" [routerLink]="['/signup']">Register</a>
+            </form>
+        </div>
+    </div>
+</div>
