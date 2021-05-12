@@ -28,7 +28,7 @@
         "@ngx-translate/http-loader": "^3.0.1",
         "angular-datatables": "^6.0.0",
         "angular-smart-table": "^2.1.11",
-        "chart.js": "^2.7.2",
+        "chart.js": "^2.9.4",
         "core-js": "^2.5.5",
         "datatables.net": "^1.10.19",
         "datatables.net-dt": "^1.10.19",
